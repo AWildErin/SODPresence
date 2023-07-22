@@ -1,0 +1,9 @@
+{
+  "name": "SODPresence",
+  "website_url": "https://github.com/awilderin",
+  "version_number": "1.0.0",
+  "description": "Adds Discord Rich Presence support to the game.",
+  "dependencies": [
+    "BepInEx-BepInExPack_IL2CPP-6.0.667"
+  ]
+}

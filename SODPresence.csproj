@@ -17,12 +17,21 @@
     <ItemGroup>
         <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
         <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+        <PackageReference Include="DiscordRichPresence" Version="1.1.4.20" />
     </ItemGroup>
 
     <PropertyGroup>
         <BepInExPath>E:\Modding\r2modman-data\ShadowsofDoubt\profiles\Dev\BepInEx\</BepInExPath>
         <SODPath>D:\Steam Games\steamapps\common\Shadows of Doubt\</SODPath>
         <ProjectPath>$(BepInExPath)\plugins\\AWildErin-$(AssemblyName)\</ProjectPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
@@ -33,6 +42,6 @@
         <Exec Command="if not exist &quot;$(ProjectPath)&quot; md &quot;$(ProjectPath)&quot;" />
         <Exec Command="copy /Y &quot;$(TargetDir)$(TargetName).*&quot; &quot;$(ProjectPath)&quot;" />
         <Exec Command="copy /Y &quot;$(ProjectDir)ModFolderContent\*&quot; &quot;$(ProjectPath)&quot;" />
-        <Exec Command="if exist &quot;$(ProjectDir)\README.md&quot; copy /Y &quot;$(ProjectDir)\README.md&quot; &quot;$(ProjectPath)&quot;" />
+        <Exec Command="if exist &quot;$(ProjectDir)\README.md&quot; copy /Y &quot;$(ProjectDir)\README.md&quot; &quot;$(ProjectPath)&quot;" />     
     </Target>
 </Project>

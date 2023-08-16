@@ -26,8 +26,9 @@ public class Plugin : BasePlugin
 		// Plugin startup logic
 		Log.LogInfo( $"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!" );
 
-#if DEBUG
 		ClassInjector.RegisterTypeInIl2Cpp<DiscordManager>();
+
+#if DEBUG
 		ClassInjector.RegisterTypeInIl2Cpp<DiscordDebugUI>();
 #endif
 
